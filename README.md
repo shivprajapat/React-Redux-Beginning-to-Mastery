@@ -2,7 +2,6 @@
 <img src="./redux.gif" width="100%" height="auto" />
 
 ## Topic Covered :-
-
 ### Package Name
 - redux
 - react-redux 
@@ -13,6 +12,8 @@
 ### 4 [Redux Reducers](#redux-reducers)
 ### 5 [Redux Root Reducers](#redux-root-reducers)
 ### 6 [Redux Store](#redux-store)
+### 7 [Redux Provider](#redux-provider)
+
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
 
@@ -100,3 +101,17 @@ const store = createStore(rootReducers)
 export default store;
 ```
 Note: Redux store brings together state, actions and reducers that make up your app.
+## redux-provider
+
+#### What is the use of a provider ?
+
+to provide the data of store to react application
+```javascript
+import store from "./store";
+import {Provider} from "react-redux";
+
+<Provider store={store}>
+<App/>
+</Provider>
+```
+
