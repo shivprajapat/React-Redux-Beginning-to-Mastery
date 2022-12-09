@@ -7,6 +7,7 @@
 
 ### 1 [ReactRedux Installation](#reactRedux-installation)
 ### 2 [Redux Actions](#redux-actions)
+### 3 [Redux Reducers](#redux-reducers)
 
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
@@ -39,5 +40,27 @@ return {type : INCREMENT};
 export const decrement =()=>{
 return {type : DECREMENT};
 }
+```
 
+## redux-reducers
+
+are functions that take the current state and an action as arguments and return a new state as a result.
+
+```javascript
+import { DECEREMENT, INCREMENT } from "../constants";
+
+const initialState = 0;
+
+const changeCount = (state = initialState, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECEREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+export default changeCount;
 ```
