@@ -3,12 +3,11 @@ import { DECEREMENT, INCREMENT } from "../constants";
 const initialState = 0;
 
 const changeCount = (state = initialState, action) => {
-  console.log('action :>> ', action);
   switch (action.type) {
     case INCREMENT:
-      return state + 1;
+      return state + action.payload;
     case DECEREMENT:
-      return state - 1;
+      return state - action.payload;
     default:
       return state;
   }

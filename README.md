@@ -13,7 +13,9 @@
 ### 5 [Redux Root Reducers](#redux-root-reducers)
 ### 6 [Redux Store](#redux-store)
 ### 7 [Redux Provider](#redux-provider)
-### 7 [Redux useSelector()](#redux-useSelector)
+### 8 [Redux useSelector()](#redux-useSelector)
+### 9 [Redux useSelector()](#redux-useSelector)
+
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
 
@@ -114,6 +116,16 @@ import {Provider} from "react-redux";
 <App/>
 </Provider>
 ```
+## redux-useSelector
+#### What is useSelector() hook?
+The useSelector hook takes a function which receives as its first argument state, and then it allows you to return from that which part of the state that you want.
+
+```javascript
+import {useSelector} from "react-redux";
+const count = useSelector((state)=>state.changeCount)
+```
+
+
 ## redux-useSelector
 #### What is useSelector() hook?
 The useSelector hook takes a function which receives as its first argument state, and then it allows you to return from that which part of the state that you want.
