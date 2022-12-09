@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import UpDown from "./reducers/UpDown";
+import changeCount from "./reducers";
 
 const rootReducers = combineReducers({
-  UpDown,
+  changeCount,
 });
 
 export default rootReducers;
