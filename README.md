@@ -1,4 +1,6 @@
 # 🏆 React Redux Beginning to Mastery 🏆
+<img src="./redux.gif" width="100%" height="auto" />
+
 ## Topic Covered :-
 
 ### Package Name
@@ -10,6 +12,7 @@
 ### 3 [Redux Constants](#redux-constant)
 ### 4 [Redux Reducers](#redux-reducers)
 ### 5 [Redux Root Reducers](#redux-root-reducers)
+### 6 [Redux Store](#redux-store)
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
 
@@ -25,7 +28,6 @@ Project Step Up :
 - npm start
 - npm install redux 
 - npm install react-redux
-
 ## redux-actions
 
 are javascript objects that have a type field and payload and it uses for What to Do.
@@ -41,9 +43,7 @@ export const decrement =()=>{
 return {type : DECREMENT};
 }
 ```
-
 ## redux-Cconstant
-
 #### Why use constant  in react redux ?
 It allows you to easily find all usages of that constant across the project. It also prevents you from introducing silly bugs caused by typos -- in which case, you will get a ReferenceError immediately.
 
@@ -53,7 +53,6 @@ export const INCREMENT=”INCREMENT”;
 export const DECREMENT=”DECREMENT”;
 
 ```
-
 ## redux-reducers
 
 are functions that take the current state and an action as arguments and return a new state as a result.
@@ -76,17 +75,28 @@ const changeCount = (state = initialState, action) => {
 
 export default changeCount;
 ```
-
 ## redux-root-reducers
-### What is Root Reducer?
+ ### What is Root Reducer?
 Redux uses a single root reducer function that accepts the current state (and an action) as input and returns a new state
 
 The combineReducers helper function turns an object whose values are different reducing functions into a single reducing function you can pass to createStore . The resulting reducer calls every child reducer, and gathers their results into a single state object.
 ```javascript
-import { combineReducers } from “redux”;
-import CartItems from “./CartItems”;
+import { combineReducers } from "redux";
+import CartItems from "./CartItems";
 
 export default combineReducers({
 CartItems
 })
 ```
+## redux-store
+
+A store is an immutable object tree in Redux. A store is a state container which holds the application’s state. Redux can have only a single store in your application
+
+```javascript
+import {createStore} from "redux";
+import rootReducers from "./reducers/index";
+
+const store = createStore(rootReducers)
+export default store;
+```
+Note: Redux store brings together state, actions and reducers that make up your app.
