@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { decrement, increment } from '../redux/actions'
 
 export default class PlusMinusClass extends Component {
   render() {
@@ -6,11 +7,11 @@ export default class PlusMinusClass extends Component {
       <article>
         <h2>Class Component</h2>
         <aside>
-          <button>-</button>
+          <button onClick={()=>increment()}>-</button>
           <span>0</span>
-          <button>+</button>
+          <button onClick={()=>decrement()}>+</button>
         </aside>
-      </article>
+    </article>
     )
   }
 }

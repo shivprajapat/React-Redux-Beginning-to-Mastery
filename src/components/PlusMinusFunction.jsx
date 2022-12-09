@@ -1,13 +1,14 @@
 import React from 'react'
+import { decrement, increment } from '../redux/actions'
 
 const PlusMinusFunction = () => {
   return (
     <article>
       <h2>Function Components</h2>
       <aside>
-          <button>-</button>
+          <button onClick={()=>increment()}>-</button>
           <span>0</span>
-          <button>+</button>
+          <button onClick={()=>decrement()}>+</button>
         </aside>
     </article>
   )

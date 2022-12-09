@@ -6,6 +6,7 @@
 - react-redux 
 
 ### 1 [ReactRedux Installation](#reactRedux-installation)
+### 2 [Redux Actions](#redux-actions)
 
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
@@ -22,3 +23,21 @@ Project Step Up :
 - npm start
 - npm install redux 
 - npm install react-redux
+
+
+## redux-actions
+
+are javascript objects that have a type field and payload and it uses for What to Do.
+
+```javascript
+import  {INCREMENT,DECREMENT} from "../constants";
+
+export const increment =()=>{
+return {type : INCREMENT};
+}
+
+export const decrement =()=>{
+return {type : DECREMENT};
+}
+
+```
