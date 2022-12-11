@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { decrement, increment } from '../redux/actions'
-
+import { connect } from 'react-redux';
 class PlusMinusClass extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ class PlusMinusClass extends Component {
         <h2>Class Component</h2>
         <aside>
           <button onClick={() => this.props.decrement(1)}>-</button>
-          <span>0</span>
+          <span>{this.props.count}</span>
           <button onClick={() => this.props.increment(5)}>+</button>
         </aside>
       </article>
@@ -32,4 +32,4 @@ const mapDispatchToProps = (dispatch => {
   }
 })
 
-export default PlusMinusClass;
+export default connect(mapStateToProps,mapDispatchToProps)(PlusMinusClass);
