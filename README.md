@@ -13,8 +13,8 @@
 ### 5 [Redux Root Reducers](#redux-root-reducers)
 ### 6 [Redux Store](#redux-store)
 ### 7 [Redux Provider](#redux-provider)
-### 8 [Redux useSelector()](#redux-useSelector)
-### 9 [Redux useSelector()](#redux-useSelector)
+### 8 [Redux useSelector](#redux-useSelector)
+### 9 [Redux mapDispatchToProps](#redux-mapDispatchToProps)
 
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
@@ -47,15 +47,15 @@ return {type : DECREMENT};
 }
 ```
 ## redux-Cconstant
-#### Why use constant  in react redux ?
-It allows you to easily find all usages of that constant across the project. It also prevents you from introducing silly bugs caused by typos -- in which case, you will get a ReferenceError immediately.
+  #### Why use constant  in react redux ?
+  It allows you to easily find all usages of that constant across the project. It also prevents you from introducing silly bugs caused by typos -- in which case, you will get a ReferenceError immediately.
 
 
-```javascript
-export const INCREMENT=”INCREMENT”;
-export const DECREMENT=”DECREMENT”;
+  ```javascript
+  export const INCREMENT="INCREMENT";
+  export const DECREMENT="DECREMENT";
 
-```
+  ```
 ## redux-reducers
 
 are functions that take the current state and an action as arguments and return a new state as a result.
@@ -117,20 +117,22 @@ import {Provider} from "react-redux";
 </Provider>
 ```
 ## redux-useSelector
-#### What is useSelector() hook?
-The useSelector hook takes a function which receives as its first argument state, and then it allows you to return from that which part of the state that you want.
+  #### What is useSelector() hook?
+  The useSelector hook takes a function which receives as its first argument state, and then it allows you to return from that which part of the state that you want.
 
-```javascript
-import {useSelector} from "react-redux";
-const count = useSelector((state)=>state.changeCount)
-```
+  ```javascript
+  import {useSelector} from "react-redux";
+  const count = useSelector((state)=>state.changeCount)
+  ```
+## redux-mapDispatchToProps
+  #### What is mapDispatchToProps in redux?
+mapDispatchToProps argument is responsible for enabling a component to dispatch actions.
 
-
-## redux-useSelector
-#### What is useSelector() hook?
-The useSelector hook takes a function which receives as its first argument state, and then it allows you to return from that which part of the state that you want.
-
-```javascript
-import {useSelector} from "react-redux";
-const count = useSelector((state)=>state.changeCount)
-```
+  ```javascript
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: (num) => dispatch(increment(num)),
+    decrement: (num) => dispatch(decrement(num)),
+  }
+}
+  ```
