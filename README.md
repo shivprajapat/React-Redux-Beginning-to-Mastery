@@ -15,6 +15,7 @@
 ### 7 [Redux Provider](#redux-provider)
 ### 8 [Redux useSelector](#redux-useSelector)
 ### 9 [Redux mapDispatchToProps](#redux-mapDispatchToProps)
+### 10 [Redux mapStateToProps](#redux-mapStateToProps)
 
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
@@ -134,5 +135,13 @@ const mapDispatchToProps = (dispatch) => {
     increment: (num) => dispatch(increment(num)),
     decrement: (num) => dispatch(decrement(num)),
   }
+}
+  ```
+## redux-mapStateToProps
+  #### What is mapStateToProps in redux?
+mapStateToProps is used for selecting the part of the data from the store that the connected component needs. It&#39;s frequently referred to as just mapState for short. ... It receives the entire store state, and should return an object of data this component needs.
+  ```javascript
+const mapStateToProps=(state)=>{
+return {count:state.changeCount}
 }
   ```
