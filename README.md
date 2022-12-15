@@ -17,6 +17,7 @@
 ### 9 [Redux mapDispatchToProps](#redux-mapDispatchToProps)
 ### 10 [Redux mapStateToProps](#redux-mapStateToProps)
 ### 11 [Redux connect](#redux-connect)
+### 12 [Redux Thunk](#redux-thunk)
 
 ## reactRedux-installation
 Redux is a predictable state container for javascript application
@@ -149,6 +150,15 @@ return {count:state.changeCount}
 ## redux-connect
   #### What is connect() in react-redux?
 The connect() function connects a React component to a Redux store. It provides its connected component with the pieces of the data it needs from the store, and the functions it can use to dispatch actions to the store.
+
+  ```javascript
+import {connect} from "react-redux";
+export default connect(mapStateToProps,mapDispatchToProps)(PlusMinusClass)
+
+  ```
+
+##  redux-thunk
+  #### Action : are javascript objects that have type field and payload and it uses for `Whar to do`
 
   ```javascript
 import {connect} from "react-redux";

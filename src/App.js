@@ -11,7 +11,7 @@ function App() {
 
        <section>
        <PlusMinusFunction/>
-       <PlusMinusClass/>
+       {/* <PlusMinusClass/> */}
        </section>
       </header>
     </div>
